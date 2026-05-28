@@ -1,135 +1,112 @@
-# Ngày 2 — Tìm Đúng Bài Toán — Updated for v2 Metrics
+# Day 02 Lab — Tìm Đúng Bài Toán Cho AI
 
-> Từ brief mơ hồ hoặc cơ hội thực tế → Problem Statement rõ ràng, testable, có boundary.
+> Từ vấn đề thật quanh mình → workflow rõ → Problem Statement đủ chặt → chọn Rule / Workflow / Agent → quyết định Go / Not Yet / No-Go.
 
----
+## Tài liệu trong folder này
 
-## Tổng quan buổi học
+Folder này chỉ giữ các file cần thiết:
 
-```text
-SÁNG — Lecture (4h)                     CHIỀU — Lab (4h)
-┌──────────────────────────┐            ┌──────────────────────────┐
-│ Business-to-AI           │            │ Scan bài toán từ chính   │
-│ Translation Framework    │     →      │ mình → Filter → Deep-dive│
-│ AI-Fit Matrix            │            │ → AI Fit → Go/No-Go      │
-│ Go / No-Go / Not Yet     │            │ → Pitch                  │
-└──────────────────────────┘            └──────────────────────────┘
-```
+| File | Dùng để làm gì |
+|---|---|
+| `01-worksheet.md` | File hướng dẫn chính cho toàn bộ lab 4 tiếng. Bộ gợi ý, hướng dẫn công cụ, prompt và checklist tự kiểm đã được tích hợp trực tiếp vào từng phase. |
+| `02-deliverable-example.md` | Ví dụ bài nộp hoàn chỉnh để học viên nhìn được output cuối cùng trông như thế nào. |
 
-**Lecture** dạy frameworks: cách dịch yêu cầu mơ hồ thành bài toán AI, chọn mức giải pháp (Rule / LLM Feature / Agent), viết Problem Statement, và ra quyết định Go / No-Go / Not Yet.
+## Cấu trúc repo nộp bài
 
-**Lab** cho học viên thực hành toàn bộ quy trình trên bài toán thật từ công việc/cuộc sống của mình — từ scan 5+ ý tưởng → chọn 1 → deep-dive → quyết định.
-
----
-
-## Nguyên tắc chung (áp dụng xuyên suốt Ngày 2, 5, 6)
-
-1. **AI không thay học viên ra quyết định** — AI brainstorm/draft, học viên chọn/sửa/chốt.
-2. **"Không build AI" vẫn có thể điểm cao** — điểm dựa trên chất lượng tư duy, không phải độ “ngầu” của giải pháp.
-3. **Bắt buộc có AI Support Log** — ghi AI giúp gì, sai gì, nhóm sửa gì.
-4. **Gate giữa các ngày** — Ngày 2: PS + metric + architecture đủ rõ → qua Ngày 5.
-5. **Rubric mới tách rõ nhóm / cá nhân** — nhóm mạnh không tự động kéo toàn bộ thành viên lên điểm cao.
-
----
-
-## Tài liệu
-
-| File | Mô tả |
-|------|-------|
-| `01-worksheet.md` | Worksheet chính — self-check theo rubric |
-| `02-deliverable-example.md` | Bài nộp mẫu hoàn chỉnh + giải thích vì sao bài này đạt điểm cao |
-| `03-inspiration-kit.md` | Gợi ý bài toán cho ai chưa nghĩ ra |
-
----
-
-## Flow buổi lab (4h)
+Mỗi học viên nộp **một repo cá nhân**:
 
 ```text
-Phase 0  WORKED EXAMPLE         15 min   GV demo bài nộp mẫu — học viên xem
-Phase 1  SCAN                   20 min   Cá nhân: liệt kê 5+ bài toán → nhóm: share top 3
-Phase 2  QUICK-ASSESS           40 min   Cá nhân: điền 3 Quick Problem Cards → nhóm: gallery vote
-         ─── Break ───          10 min
-Phase 3  PITCH-CHALLENGE-VOTE   30 min   Nhóm pitch + challenge + chọn 1 bài toán
-Phase 4  DEEP-DIVE              85 min   Nhóm: vẽ workflow + viết PS + research + future flow
-         ─── Break ───          10 min
-Phase 5  EVALUATE               20 min   Nhóm: AI Readiness + Go/Not Yet/No-Go
-Phase 6  REFLECTION             10 min   Cá nhân: AI Support Log + reflection
+Day02-MãHọcViên-HọVàTên/
+├── README.md
+├── 01-individual-problem-scan/
+├── 02-group-problem-statement/
+└── 03-individual-reflection/
 ```
 
----
+Trong đó:
 
-## Deliverables học viên
+- `01-individual-problem-scan/`: bài cá nhân, gồm scan 5+ problems, top 3 Problem Cards, draft workflow trước/sau.
+- `02-group-problem-statement/`: **bản nộp nhóm**. Nhóm 3-4 người làm chung một bản gồm nhật ký hội tụ, kiểm chứng/research, Problem Statement, Rule / Workflow / Agent, quyết định cuối, workflow trước/sau. Mỗi học viên copy bản cuối vào repo cá nhân của mình.
+- `03-individual-reflection/`: reflection cá nhân về AI, vai trò trong nhóm, và bài học sau lab.
 
-Mỗi người nộp 1 zip: `MaHocVien-HoTen-day02.zip`
+Nếu có file phụ như ảnh workflow, Mermaid, survey screenshot, research notes, đặt cùng prefix với phần liên quan:
 
-| File | Loại | Mô tả |
-|------|------|-------|
-| `01-problem-scan.md` | Cá nhân | 5+ bài toán qua 4 Lenses + 3 Quick Cards + kill rationale |
-| `02-deep-dive-report.md` | Nhóm | Workflow + PS 6-field + metrics + research + AI fit + Go/No-Go |
-| `03-ai-log.md` | Cá nhân | Log cho Phase 6 — Reflection: ghi lại AI hỗ trợ gì trong từng phase, sai/hời hợt ở đâu, học viên sửa gì bằng tay — và điều gì thay đổi trong tư duy sau buổi lab |
-| `04-workflow-diagram.png/pdf` | Nhóm | Current-state + future-state flow |
-| `extras/` | Tùy chọn | Research notes, screenshots, tài liệu bổ sung |
+```text
+01-individual-problem-scan-workflow-card-1.png
+02-group-problem-statement-workflow.pdf
+02-group-problem-statement-research-notes.md
+```
 
-**Lưu ý vận hành**
-- `01` và `03` là căn cứ chính cho **điểm cá nhân**.
-- `02` và `04` là căn cứ chính cho **điểm nhóm**.
-- Mỗi người vẫn nộp **1 zip riêng**, kể cả khi file nhóm giống nhau.
+## Đọc file nào để làm gì?
 
----
+1. Mở `02-deliverable-example.md` trước để nhìn một bản nộp tốt trông như thế nào.
+2. Làm theo `01-worksheet.md` từ Phase 1 đến Phase 7. Worksheet là hướng dẫn suy nghĩ theo từng bước, không chỉ là form để điền.
+3. Khi nộp, repo cá nhân cần có đủ 3 phần: problem scan cá nhân, bản nộp nhóm, reflection cá nhân.
 
-## Chấm điểm (100 điểm) — v2 metrics
+## Tiêu chí đánh giá (100 điểm)
+
+Điểm của mỗi học viên gồm **điểm nhóm 60 điểm** và **điểm cá nhân 40 điểm**. Điểm nhóm là điểm cho bản nộp nhóm; mỗi học viên vẫn copy bản cuối vào repo cá nhân của mình. Bài làm không cần chọn Agent mới được điểm cao. Điểm nằm ở việc nhóm hiểu đúng bài toán, lập luận rõ, biết vì sao nên hoặc không nên dùng AI.
+
+Ngoài 100 điểm chính, học viên có thể có **tối đa +10 điểm bonus**.
 
 ### A. Điểm nhóm — 60 điểm
 
-| Thành phần | Điểm | Focus |
-|-----------|------|-------|
-| Workflow Mapping | 15 | Flow vẽ rõ, bottleneck, thời gian, handoff |
-| Problem Statement + Metrics + Boundary | 20 | 6 field đủ, metric có ngưỡng, boundary rõ |
-| AI Fit + Alternatives + Future Flow | 15 | Justify so sánh rule / LLM / agent, future flow có AI / Human / Boundary / Fallback |
-| Decision Quality | 10 | Go / Not Yet / No-Go justify bằng evidence |
+| Thành phần | Điểm | Cần thể hiện rõ |
+|---|---:|---|
+| Workflow trước/sau | 15 | Vẽ được workflow hiện tại và workflow sau tối ưu. Nhìn ra bước nghẽn, ai làm bước đó, mất bao lâu, bàn giao qua ai, AI hoặc tự động hóa nằm ở bước nào. |
+| Problem Statement + metric + boundary | 20 | Problem Statement có người gặp vấn đề, workflow, điểm nghẽn, tác động, success metric và boundary. Metric có hiện trạng ban đầu, mục tiêu sau cải thiện và cách đo, không chỉ viết "nhanh hơn" hoặc "tốt hơn". Boundary nói rõ phạm vi làm và không làm. |
+| Độ phù hợp với AI + phương án thay thế | 15 | So sánh được No AI / Rule / Workflow / Agent. Giải thích vì sao chọn mức đó, vì sao không chọn mức còn lại, AI được phép làm gì, phần nào cần người kiểm tra. |
+| Chất lượng quyết định | 10 | Quyết định Go / Not Yet / No-Go có lý do dựa trên bằng chứng, research hoặc giả định được ghi rõ. Không quyết định chỉ vì "muốn làm AI". |
 
 ### B. Điểm cá nhân — 40 điểm
 
-| Thành phần | Điểm | Focus |
-|-----------|------|-------|
-| Scan Breadth + Quick Problem Cards | 12 | Breadth, dùng 4 lenses, cards đủ chất lượng |
-| Pitch + Challenge Participation | 12 | Pitch rõ, challenge đúng trọng tâm, không đi nhờ nhóm |
-| AI Support Log + Reflection | 10 | Log Phase 6: ghi trung thực AI hỗ trợ gì, sai ở đâu, học viên sửa gì — và rút ra được bài học gì cho bản thân |
-| Individual Understanding Check | 6 | Trả lời được problem → metric → boundary → AI fit |
+| Thành phần | Điểm | Cần thể hiện rõ |
+|---|---:|---|
+| Scan problem + top 3 Problem Cards | 12 | Scan ít nhất 5 problems từ trải nghiệm thật, dùng nhiều lăng kính, có người gặp vấn đề và dấu hiệu thật. Top 3 Problem Cards đủ rõ để pitch với nhóm. |
+| Tham gia pitch + challenge | 12 | Pitch vấn đề của mình ngắn gọn, rõ người gặp vấn đề / workflow / điểm nghẽn. Khi nghe bạn khác, có đặt câu hỏi hoặc challenge đúng trọng tâm để giúp nhóm chọn bài tốt hơn. |
+| Reflection cá nhân | 10 | Ghi trung thực AI đã hỗ trợ gì, sai/hời hợt ở đâu, mình đã sửa gì bằng nhận định của bản thân. Reflection có nói rõ vai trò, đóng góp của mình trong nhóm, điều học được và nếu làm lại sẽ đổi gì. |
+| Kiểm tra hiểu bài cá nhân | 6 | Tự giải thích được mạch problem → workflow → metric → boundary → độ phù hợp với AI. Nếu được hỏi nhanh, trả lời được vì sao nhóm chọn Rule / Workflow / Agent và Go / Not Yet / No-Go. |
 
-### C. Mức xếp loại
+### C. Bonus — tối đa +10 điểm
+
+| Phần bonus | Tối đa | Khi nào được cộng |
+|---|---:|---|
+| Scan rộng hơn yêu cầu | +3 | Có 8-10+ problems cụ thể, đa dạng lăng kính, không phải list dài nhưng chung chung. |
+| Tương tác tích cực | +3 | Trả lời câu hỏi thảo luận, gửi bài tập nhanh lên Discord, đặt câu hỏi tốt, hoặc challenge giúp bạn/nhóm làm rõ bài toán hơn. |
+| Kiểm chứng / research vượt yêu cầu | +4 | Có phỏng vấn nhanh, survey nhỏ, log thật, nguồn đáng tin cậy, hoặc kiểm chứng giúp nhóm sửa lại problem, metric hoặc quyết định cuối. |
+
+### D. Mức xếp loại
 
 | Mức | Điểm | Ý nghĩa |
-|-----|------|---------|
-| **Không pass** | < 50 | Chưa nắm được problem-first, metric, AI fit |
-| **Vừa đủ pass** | 50–64 | Có hiểu flow cơ bản nhưng còn mơ hồ ở phần chính |
-| **Hiểu khá** | 65–79 | Làm được đa số yêu cầu, logic tương đối rõ |
-| **Hiểu đầy đủ** | 80–89 | Workflow, PS, AI fit, decision đều nhất quán |
-| **Hiểu xuất sắc** | 90–100 | Tư duy rất chặt, biết phản biện alternatives, quyết định trưởng thành |
+|---|---:|---|
+| Không pass | < 50 | Bài còn solution-first, chưa nắm được problem, workflow, metric hoặc độ phù hợp với AI. |
+| Vừa đủ pass | 50-64 | Có đủ phần cơ bản nhưng nhiều chỗ còn mơ hồ, metric hoặc boundary chưa chắc. |
+| Hiểu khá | 65-79 | Làm được đa số yêu cầu, logic tương đối rõ, còn thiếu bằng chứng hoặc so sánh phương án thay thế chưa sâu. |
+| Hiểu đầy đủ | 80-89 | Workflow, Problem Statement, độ phù hợp với AI và quyết định cuối nhất quán; metric và boundary rõ. |
+| Rất tốt | 90-100 | Bài có bằng chứng tốt, lập luận chặt, biết giới hạn của AI, reflection cá nhân sâu và trung thực. |
 
-### Nguyên tắc chấm
+## Flow lab 4 tiếng
 
-- Chất lượng tư duy > mức phức tạp giải pháp
-- "Không cần AI" vẫn có thể điểm cao
-- "Not Yet" với justify tốt > "Go" với lập luận yếu
-- Điểm cá nhân dùng để **phân biệt mức độ hiểu thực**, không chỉ mức độ ngồi trong nhóm tốt
+```text
+Phase 0  Worked Example                  15'
+Phase 1  Individual Scan                 25'
+Phase 2  Top 3 Problem Cards             35'
+         Break                            10'
+Phase 3  Group Convergence               30'
+Phase 4  Validation + Research            30'
+Phase 5  Workflow + Problem Statement     45'
+         Break                            10'
+Phase 6  Rule/Workflow/Agent + Decision   25'
+Phase 7  Individual Reflection            15'
+```
+
+## Điều quan trọng nhất
+
+- Nhóm **không chọn Problem Statement ngay**. Nhóm chọn một **candidate problem** để đào sâu.
+- Problem Statement chỉ được viết sau khi đã validate, research, vẽ workflow và làm metric rõ hơn.
+- Rule không kém Agent. Nếu Rule hoặc Workflow giải đúng bài toán với ít rủi ro hơn, đó là lựa chọn tốt.
+- AI chỉ hỗ trợ tư duy. Người học vẫn phải tự kiểm nguồn, tự chốt lập luận, tự chịu trách nhiệm với quyết định.
 
 ---
 
-## Mục tiêu thực sự của Ngày 2
-
-Ngày 2 không nhằm kiểm tra “ai nghĩ ra ý tưởng AI hay nhất”, mà nhằm kiểm tra xem học viên có thể:
-
-- tìm pain thật,
-- mô tả workflow thật,
-- viết metric đo được,
-- chọn đúng mức giải pháp,
-- và ra quyết định trưởng thành hay không.
-
-**Problem first, not AI first.**
-
----
-
-*README — Ngày 2: Tìm Đúng Bài Toán*  
-*Bản cập nhật theo v2 metrics*  
-*VinUni A20 — AI Thực Chiến*
+*Day 02 Lab v2 — Batch 02*
